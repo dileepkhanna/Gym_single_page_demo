@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone - Transform Your Body</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Dumbbell Cursor -->
+    <div class="cursor-dumbbell">
+        <div class="dumbbell-left"></div>
+        <div class="dumbbell-bar"></div>
+        <div class="dumbbell-right"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>FitZone</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#programs" class="nav-link">Programs</a></li>
+                <li><a href="#trainers" class="nav-link">Trainers</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg hero-bg-1 active"></div>
+        <div class="hero-bg hero-bg-2"></div>
+        <div class="hero-bg hero-bg-3"></div>
+        <canvas id="particleCanvas"></canvas>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="hero-title animate-fade-in glitch" data-text="Transform Your Body">Transform Your Body</h1>
+            <p class="hero-subtitle animate-fade-in-delay">Build Strength, Gain Confidence, Live Better</p>
+            <a href="#pricing" class="btn btn-primary animate-fade-in-delay-2 magnetic-btn">Start Your Journey</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About FitZone</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Fitness Journey Starts Here</h3>
+                    <p>At FitZone, we believe fitness is more than just working out—it's a lifestyle. Our
+                        state-of-the-art facility and expert trainers are dedicated to helping you achieve your goals.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="500">0</h4>
+                            <p>Active Members</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="15">0</h4>
+                            <p>Expert Trainers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="1000">0</h4>
+                            <p>Success Stories</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=500&fit=crop"
+                            alt="Fitness" class="reveal-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Programs</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop"
+                            alt="Strength Training">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Strength Training <i class="fas fa-chevron-down program-expand-icon"></i></h3>
+                        <p>Build muscle and increase power with our comprehensive strength programs.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Free weights & machines training</li>
+                            <li><i class="fas fa-check"></i> Progressive overload programs</li>
+                            <li><i class="fas fa-check"></i> Personalized workout plans</li>
+                            <li><i class="fas fa-check"></i> Form correction & technique</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop"
+                            alt="Cardio Fitness">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Cardio Fitness <i class="fas fa-chevron-down program-expand-icon"></i></h3>
+                        <p>Boost endurance and burn calories with high-energy cardio workouts.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> HIIT & interval training</li>
+                            <li><i class="fas fa-check"></i> Treadmill & cycling programs</li>
+                            <li><i class="fas fa-check"></i> Heart rate monitoring</li>
+                            <li><i class="fas fa-check"></i> Endurance building plans</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop"
+                            alt="Yoga">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Yoga & Flexibility <i class="fas fa-chevron-down program-expand-icon"></i></h3>
+                        <p>Improve flexibility and find inner peace with guided yoga sessions.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hatha & Vinyasa yoga</li>
+                            <li><i class="fas fa-check"></i> Stretching & mobility work</li>
+                            <li><i class="fas fa-check"></i> Meditation sessions</li>
+                            <li><i class="fas fa-check"></i> Stress relief techniques</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop"
+                            alt="Group Classes">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Group Classes <i class="fas fa-chevron-down program-expand-icon"></i></h3>
+                        <p>Stay motivated with energetic group fitness classes for all levels.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Zumba & dance fitness</li>
+                            <li><i class="fas fa-check"></i> Spin & cycling classes</li>
+                            <li><i class="fas fa-check"></i> Boot camp training</li>
+                            <li><i class="fas fa-check"></i> Community support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+                            alt="Personal Training">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Personal Training <i class="fas fa-chevron-down program-expand-icon"></i></h3>
+                        <p>Get one-on-one attention with customized training programs.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 1-on-1 coaching sessions</li>
+                            <li><i class="fas fa-check"></i> Custom meal plans</li>
+                            <li><i class="fas fa-check"></i> Progress tracking & analysis</li>
+                            <li><i class="fas fa-check"></i> 24/7 trainer support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop"
+                            alt="Nutrition">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Nutrition Coaching <i class="fas fa-chevron-down program-expand-icon"></i></h3>
+                        <p>Fuel your body right with expert nutrition guidance and meal plans.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Custom meal planning</li>
+                            <li><i class="fas fa-check"></i> Macro & calorie tracking</li>
+                            <li><i class="fas fa-check"></i> Supplement guidance</li>
+                            <li><i class="fas fa-check"></i> Weekly check-ins</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section -->
+    <section class="cta-banner">
+        <div class="cta-overlay"></div>
+        <div class="container cta-content">
+            <h2>Ready to Transform Your Life?</h2>
+            <p>Join thousands of members who have already started their fitness journey</p>
+            <a href="#pricing" class="btn btn-primary">Start Today</a>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="trainers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Trainers</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300&h=300&fit=crop"
+                            alt="Mike Johnson">
+                        <div class="trainer-overlay">
+                            <span>View Profile</span>
+                        </div>
+                    </div>
+                    <h3>Mike Johnson</h3>
+                    <p class="trainer-specialty">Strength & Conditioning</p>
+                    <div class="trainer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=300&h=300&fit=crop"
+                            alt="Sarah Williams">
+                        <div class="trainer-overlay">
+                            <span>View Profile</span>
+                        </div>
+                    </div>
+                    <h3>Sarah Williams</h3>
+                    <p class="trainer-specialty">Yoga & Wellness</p>
+                    <div class="trainer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=300&h=300&fit=crop"
+                            alt="David Chen">
+                        <div class="trainer-overlay">
+                            <span>View Profile</span>
+                        </div>
+                    </div>
+                    <h3>David Chen</h3>
+                    <p class="trainer-specialty">HIIT & Cardio</p>
+                    <div class="trainer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose FitZone?</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=400&fit=crop"
+                            alt="Modern Equipment">
+                    </div>
+                    <div class="feature-info">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Modern Equipment</h3>
+                        <p>State-of-the-art machines and free weights for all your training needs</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop"
+                            alt="Expert Trainers">
+                    </div>
+                    <div class="feature-info">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Expert Trainers</h3>
+                        <p>Certified professionals dedicated to helping you reach your goals</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=600&h=400&fit=crop"
+                            alt="Flexible Hours">
+                    </div>
+                    <div class="feature-info">
+                        <i class="fas fa-clock"></i>
+                        <h3>Flexible Hours</h3>
+                        <p>Open early morning to late night to fit your busy schedule</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
+                            alt="Community">
+                    </div>
+                    <div class="feature-info">
+                        <i class="fas fa-heart"></i>
+                        <h3>Supportive Community</h3>
+                        <p>Join a motivating community that celebrates every achievement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transformation Gallery</h2>
+                <div class="title-underline"></div>
+                <p
+                    style="text-align: center; color: #b8b8b8; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Real results from real members. See the incredible transformations happening at FitZone every day.
+                </p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
+                        alt="Gym workout">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Strength Training</h3>
+                            <p>Build muscle and power</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop"
+                        alt="Modern equipment">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Modern Equipment</h3>
+                            <p>State-of-the-art facility</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop"
+                        alt="Group fitness">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Group Classes</h3>
+                            <p>Train together, grow together</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop"
+                        alt="Weightlifting">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Power Lifting</h3>
+                            <p>Push your limits</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop"
+                        alt="Cardio training">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Cardio Zone</h3>
+                            <p>Boost your endurance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop"
+                        alt="Yoga">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Yoga & Flexibility</h3>
+                            <p>Find your balance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Membership Plans</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount">1000</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Gym Access</li>
+                        <li><i class="fas fa-check"></i> Locker Room</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-times"></i> Group Classes</li>
+                        <li><i class="fas fa-times"></i> Personal Training</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Popular</div>
+                    <h3>Premium</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount">1500</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Gym Access</li>
+                        <li><i class="fas fa-check"></i> Locker Room</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Group Classes</li>
+                        <li><i class="fas fa-times"></i> Personal Training</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Elite</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount">2500</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Gym Access</li>
+                        <li><i class="fas fa-check"></i> Locker Room</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Group Classes</li>
+                        <li><i class="fas fa-check"></i> Personal Training</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Visakhapatnam,530016</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9948318650</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@fitzone.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon-Fri: 5AM - 11PM<br>Sat-Sun: 7AM - 9PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" id="userName" placeholder="Your Name" required>
+                    <input type="email" id="userEmail" placeholder="Your Email" required>
+                    <input type="tel" id="userPhone" placeholder="Your Phone" required>
+                    <textarea id="userMessage" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-dumbbell"></i> FitZone</h3>
+                    <p>Transform your body, transform your life. Join us today!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#trainers">Trainers</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitZone. All rights reserved.</p>
+                <P><a href="www.asetechnologies.in">Design by @asetechnologies</a></P>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Change theme">
+        <i class="fas fa-palette"></i>
+    </button>
+
+    <!-- Theme Dropdown -->
+    <div class="theme-dropdown" id="themeDropdown">
+        <div class="theme-dropdown-header">Choose Theme</div>
+
+        <div class="theme-option active" data-theme="gold">
+            <div class="theme-colors">
+                <div class="theme-color" style="background: #ffd700;"></div>
+                <div class="theme-color" style="background: #ffb700;"></div>
+                <div class="theme-color" style="background: #0f0f0f;"></div>
+            </div>
+            <div class="theme-info">
+                <div class="theme-name">Gold Luxury</div>
+                <div class="theme-desc">Premium</div>
+            </div>
+        </div>
+
+        <div class="theme-option" data-theme="light">
+            <div class="theme-colors">
+                <div class="theme-color" style="background: #2563eb;"></div>
+                <div class="theme-color" style="background: #3b82f6;"></div>
+                <div class="theme-color" style="background: #f8fafc;"></div>
+            </div>
+            <div class="theme-info">
+                <div class="theme-name">Light Mode</div>
+                <div class="theme-desc">Clean</div>
+            </div>
+        </div>
+
+        <div class="theme-option" data-theme="beast">
+            <div class="theme-colors">
+                <div class="theme-color" style="background: #ef4444;"></div>
+                <div class="theme-color" style="background: #dc2626;"></div>
+                <div class="theme-color" style="background: #0a0a0a;"></div>
+            </div>
+            <div class="theme-info">
+                <div class="theme-name">Red Beast</div>
+                <div class="theme-desc">Intense</div>
+            </div>
+        </div>
+
+        <div class="theme-option" data-theme="electric">
+            <div class="theme-colors">
+                <div class="theme-color" style="background: #00d9ff;"></div>
+                <div class="theme-color" style="background: #0099ff;"></div>
+                <div class="theme-color" style="background: #0a0e1a;"></div>
+            </div>
+            <div class="theme-info">
+                <div class="theme-name">Electric Blue</div>
+                <div class="theme-desc">Modern</div>
+            </div>
+        </div>
+
+        <div class="theme-option" data-theme="neon">
+            <div class="theme-colors">
+                <div class="theme-color" style="background: #39ff14;"></div>
+                <div class="theme-color" style="background: #00ff88;"></div>
+                <div class="theme-color" style="background: #0a0a0a;"></div>
+            </div>
+            <div class="theme-info">
+                <div class="theme-name">Neon Green</div>
+                <div class="theme-desc">Energy</div>
+            </div>
+        </div>
+
+        <div class="theme-option" data-theme="purple">
+            <div class="theme-colors">
+                <div class="theme-color" style="background: #a855f7;"></div>
+                <div class="theme-color" style="background: #ec4899;"></div>
+                <div class="theme-color" style="background: #1a1625;"></div>
+            </div>
+            <div class="theme-info">
+                <div class="theme-name">Purple Power</div>
+                <div class="theme-desc">Strong</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
