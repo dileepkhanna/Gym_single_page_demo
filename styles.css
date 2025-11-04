@@ -335,11 +335,13 @@ body {
     font-size: 4.5rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
-    color: var(--light-text);
+    color: var(--light-text) !important;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
     line-height: 1.2;
     letter-spacing: -1px;
-    opacity: 1;
+    opacity: 1 !important;
+    -webkit-text-fill-color: var(--light-text) !important;
+    background: none !important;
 }
 
 .hero-subtitle {
